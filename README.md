@@ -26,39 +26,36 @@ The platform bridges modern AI algorithms with dimensional data warehousing and 
 
 ```mermaid
 flowchart TD
-    subgraph Data_Layer [Data & Storage Layer]
-        DG[Indian Enterprise Generator] -->|3,100+ Transactions (INR)| DB[(SQLite Star Schema Warehouse)]
-        DB --> FT[fact_transactions]
-        DB --> DD[dim_date (Indian FY)]
-        DB --> DC[dim_categories]
-        DB --> DM[dim_merchants (Indian B2B)]
-        DB --> DA[dim_accounts (HDFC/ICICI/SBI)]
-        DB --> DBG[dim_budgets]
-        DB --> V_QOQ[vw_qoq_comparison]
-        DB --> V_TAX[vw_gst_tds_summary]
+    subgraph Data_Layer ["Data & Storage Layer"]
+        DG["Indian Enterprise Generator"] -->|"3,100+ Transactions (INR)"| DB[("SQLite Star Schema Warehouse")]
+        DB --> FT["fact_transactions"]
+        DB --> DD["dim_date (Indian FY)"]
+        DB --> DC["dim_categories"]
+        DB --> DM["dim_merchants (Indian B2B)"]
+        DB --> DA["dim_accounts (HDFC/ICICI/SBI)"]
+        DB --> DBG["dim_budgets"]
+        DB --> V_QOQ["vw_qoq_comparison"]
+        DB --> V_TAX["vw_gst_tds_summary"]
     end
 
-    subgraph AI_Engine [Python AI & Machine Learning]
-        FT --> NLP[NLP Expense Categorizer<br/>Indian Corporate Memos]
-        FT --> ANOM[Anomaly Detector<br/>IsolationForest + INR Outlier Thresholds]
-        FT --> FC[Cash Runway Forecaster<br/>Cyclic Ridge Regression]
-        FT --> ARTHA[Artha AI Conversational Assistant<br/>Runway, GST ITC, TDS 194J/C/I, Advance Tax]
+    subgraph AI_Engine ["Python AI & Machine Learning"]
+        FT --> NLP["NLP Expense Categorizer<br/>Indian Corporate Memos"]
+        FT --> ANOM["Anomaly Detector<br/>IsolationForest + INR Outlier Thresholds"]
+        FT --> FC["Cash Runway Forecaster<br/>Cyclic Ridge Regression"]
+        FT --> ARTHA["Artha AI Conversational Assistant<br/>Runway, GST ITC, TDS 194J/C/I, Advance Tax"]
     end
 
-    subgraph Web_Portal [BharatCorp Financial OS Web Interface]
-        AI_Engine --> API[FastAPI REST Services]
+    subgraph Web_Portal ["BharatCorp Financial OS Web Interface"]
+        AI_Engine --> API["FastAPI REST Services"]
         DB --> API
-        API --> UI_OVR[Executive Overview & Live Market Ticker]
-        API --> UI_CMP[Comparisons & Trends (QoQ, Variance, Pareto)]
-        API --> UI_ARTHA[Artha AI Interactive Chatbot]
-        API --> UI_TAX[GST & TDS Statutory Tax Hub]
-        API --> UI_AI[AI Sandbox & Inference Studio]
-        API --> UI_LEDGER[Enriched Transaction Ledger Explorer]
-        API --> UI_MODAL[Add Transaction & Empty Slate Modals]
+        API --> UI_OVR["Executive Overview & Live Market Ticker"]
+        API --> UI_CMP["Comparisons & Trends (QoQ, Variance, Pareto)"]
+        API --> UI_ARTHA["Artha AI Interactive Chatbot"]
+        API --> UI_TAX["GST & TDS Statutory Tax Hub"]
+        API --> UI_AI["AI Sandbox & Inference Studio"]
+        API --> UI_LEDGER["Enriched Transaction Ledger Explorer"]
+        API --> UI_MODAL["Add Transaction & Empty Slate Modals"]
     end
-```
-
----
 
 
 ## Project Directory Structure
