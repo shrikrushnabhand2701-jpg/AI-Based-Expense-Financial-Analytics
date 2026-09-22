@@ -56,7 +56,7 @@ flowchart TD
         API --> UI_LEDGER["Enriched Transaction Ledger Explorer"]
         API --> UI_MODAL["Add Transaction & Empty Slate Modals"]
     end
-
+````
 ## Project Directory Structure
 
 ```
