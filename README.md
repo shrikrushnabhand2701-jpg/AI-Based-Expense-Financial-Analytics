@@ -24,6 +24,7 @@ The platform bridges modern AI algorithms with dimensional data warehousing and 
 
 ## Architectural Blueprint
 
+````markdown
 ```mermaid
 flowchart TD
     subgraph Data_Layer ["Data & Storage Layer"]
