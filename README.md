@@ -24,8 +24,8 @@ The platform bridges modern AI algorithms with dimensional data warehousing and 
 
 ## Architectural Blueprint
 
+```mermaid
 flowchart TD
-
     subgraph Data_Layer [Data & Storage Layer]
         DG[Indian Enterprise Generator] -->|3,100+ Transactions (INR)| DB[(SQLite Star Schema Warehouse)]
         DB --> FT[fact_transactions]
