@@ -57,7 +57,6 @@ flowchart TD
         API --> UI_MODAL["Add Transaction & Empty Slate Modals"]
     end
 
-
 ## Project Directory Structure
 
 ```
